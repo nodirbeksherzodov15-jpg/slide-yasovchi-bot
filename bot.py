@@ -199,6 +199,7 @@ def main():
     app.add_handler(MessageHandler(text, fallback_text))
     app.add_error_handler(on_error)
     log.info("Bot starting... AI: %s", "yoqilgan" if ai_enabled() else "o'chiq (zaxira matn)")
+    asyncio.set_event_loop(asyncio.new_event_loop())
     app.run_polling(drop_pending_updates=True)
 
 
